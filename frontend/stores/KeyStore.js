@@ -6,7 +6,7 @@ var KeyStore = new Store(AppDispatcher);
 
 KeyStore.currentKeys = function() {
   return _CurrentKeys;
-}
+};
 
 KeyStore.addKey = function(key) {
   if (_CurrentKeys.indexOf(key) === -1) {

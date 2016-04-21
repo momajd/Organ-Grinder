@@ -13,6 +13,19 @@ var OrganKey = React.createClass({
     this.note = new Note(Tone[this.props.noteName]);
   },
 
+  clickToPlay: function(event) {
+    // debugger;
+    event.preventDefault();
+    var keys = KeyStore.currentKeys();
+    // if (keys.indexOf(this.props.noteName) !== -1) {
+      this.note.start();
+    //   this.setState({playing: true});
+    // } else {
+    //   this.note.stop();
+    //   this.setState({playing: false});
+    // }
+  },
+
   _play: function() {
     console.log(KeyStore.currentKeys());
     var keys = KeyStore.currentKeys();
@@ -38,7 +51,7 @@ var OrganKey = React.createClass({
     }
 
     return (
-      <div className={className}>
+      <div className={className} onClick={this.clickToPlay}>
         {this.props.noteName}
       </div>
     );
