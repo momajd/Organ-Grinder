@@ -8,16 +8,21 @@ var Organ = React.createClass({
       return noteName;
     });
 
-    var tones = noteNames.map(function(note, idx) {
-      return <OrganKey className="key" noteName={note} key={idx} />;
-    });
-
     return (
-      <div>
-        {tones}
+      <div className="keys">
+        {
+          noteNames.map(function(note, idx) {
+            return <OrganKey noteName={note} key={idx} />;
+          })
+        }
       </div>
     );
   }
 });
 
 module.exports = Organ;
+
+// mapping outside return
+// var tones = noteNames.map(function(note, idx) {
+//   return <OrganKey noteName={note} key={idx} />;
+// });

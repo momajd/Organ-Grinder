@@ -30,11 +30,16 @@ var OrganKey = React.createClass({
   // }
 
   render: function() {
-    //but this is a sound! where do the props come from?
-    // <p>{this.noteName}</p>
+    var className;
+    if (this.state.playing === true) {
+      className = "pressed";
+    } else {
+      className = "unpressed";
+    }
+
     return (
-      <div>
-        <p>{this.props.noteName}</p>
+      <div className={className}>
+        {this.props.noteName}
       </div>
     );
   }
