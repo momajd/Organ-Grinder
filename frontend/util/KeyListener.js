@@ -4,16 +4,13 @@ var KeyActions = require("../actions/keyActions.js");
 
 var KeyListener = function() {
   $(document).keydown(function(keyEvent) {
-    //Some action involving keyEvent.KeyCode
     var keycode = keyEvent.keyCode;
     var note = Mapping[keycode];
-    // Iterate through mapping, send k-v pair
     if (note) {
       KeyActions.pressed(note);
     }
   });
   $(document).keyup(function(keyEvent) {
-    //Some action involving keyEvent.KeyCode
     var keycode = keyEvent.keyCode;
     var note = Mapping[keycode];
     if (note) {
